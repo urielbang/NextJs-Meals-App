@@ -12,7 +12,7 @@ export default function MealsPage() {
         <Link href="/meals/pizza">pizza</Link>
       </p>
       <p>
-        <Link href="/meals/share">share meals</Link>
+        <Link href="/meals/share">Share page</Link>
       </p>
     </>
   );
