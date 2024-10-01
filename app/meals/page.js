@@ -18,11 +18,11 @@ export default function MealsPage() {
           <span className={classes.highlight}>by you</span>
         </h1>
         <p>
-          Choose your favorite recipe and cook it yourself. It is ease and fun!
-          <p className={classes.cta}>
-            <Link href="/meals/share">Share your Favorite Recipe</Link>
-          </p>
+          Choose your favorite recipe and cook it yourself. It is easy and fun!
         </p>
+        <div className={classes.cta}>
+          <Link href="/meals/share">Share your Favorite Recipe</Link>
+        </div>
       </header>
       <main className={classes.main}>
         <Suspense fallback={<MealsLoadingPage />}>
