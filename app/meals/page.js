@@ -5,6 +5,11 @@ import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals } from "@/lib/meals";
 import MealsLoadingPage from "./loading-out";
 
+export const metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals shared our vibrant",
+};
+
 async function Meals() {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
@@ -18,7 +23,7 @@ export default function MealsPage() {
           <span className={classes.highlight}>by you</span>
         </h1>
         <p>
-          Choose your favorite recipe and cook it yourself. It is easy and fun!
+          Choose your favorite recipe and cook it yourself. It is easy and fun
         </p>
         <div className={classes.cta}>
           <Link href="/meals/share">Share your Favorite Recipe</Link>
