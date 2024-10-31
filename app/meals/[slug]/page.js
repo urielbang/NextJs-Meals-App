@@ -6,12 +6,12 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params }) {
   const meal = await getMeal(params.slug);
 
-  if (!meal) {
-    return {
-      title: "Meal Not Found",
-      description: "The meal you are looking for does not exist.",
-    };
-  }
+  // if (!meal) {
+  //   return {
+  //     title: "Meal Not Found",
+  //     description: "The meal you are looking for does not exist.",
+  //   };
+  // }
 
   return {
     title: meal.title,
