@@ -1,10 +1,17 @@
 import classes from "./page.module.css";
-// import Image from "next/image";
+import Image from "next/image";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const meal = await getMeal(params.slug);
+
+  if (!meal) {
+    return {
+      title: "Meal Not Found",
+      description: "The meal you are looking for does not exist.",
+    };
+  }
 
   return {
     title: meal.title,
@@ -17,13 +24,14 @@ export default async function MealDetailsPage({ params }) {
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
   if (!meal) {
     notFound();
+    return null;
   }
 
   return (
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          {/* <Image fill src={meal.image} alt={meal.title} /> */}
+          <Image fill src={meal.image} alt={meal.title} />
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
